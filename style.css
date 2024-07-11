@@ -12,6 +12,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -19,11 +22,10 @@ body {
 }
 
 .card {
-    width: 280px;
+    width: 80%;
+    max-width: 280px;
     height: 360px;
-    position: absolute;
-    top: 100px;
-    left: 230px;
+    position: relative;
     transition: 2s;
     transform-style: preserve-3d;
 }
@@ -48,7 +50,7 @@ body {
 }
 
 .outside h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     color: salmon;
     margin-bottom: 30px;
@@ -61,46 +63,47 @@ body {
 }
 
 .inside h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     margin-top: 20px;
 }
 
 .block {
-    position: absolute;
-    top: 200px;
-    right: 600px;
+    width: 90%;
+    max-width: 400px;
+    margin-top: 20px;
     perspective: 800px;
 }
 
 .frames {
-    width: 400px;
-    height: 150px;
+    width: 100%;
+    height: auto;
+    max-height: 150px;
     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0 0.8rem;
+    padding: 0.8rem;
     transform: rotateY(-230deg) rotateX(20deg);
-    position: absolute;
+    position: relative;
+    margin-bottom: 20px;
 }
 
 .frames img {
-    width: 125px;
-    height: 125px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     box-shadow: 0 5px 10px rgba(0,0,0,0.5);
 }
 
 .frames p {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     transform: rotateY(180deg);
+    text-align: center;
 }
 
 .frames:nth-child(1) {
-    top: -110px;
-    z-index: -1;
     background-color: coral;
 }
 
@@ -109,6 +112,31 @@ body {
 }
 
 .frames:nth-child(3) {
-    top: 100px;
     background-color: burlywood;
+}
+
+@media (min-width: 600px) {
+    .card {
+        width: 280px;
+        height: 360px;
+        top: 100px;
+        left: 230px;
+    }
+
+    .outside h1 {
+        font-size: 3rem;
+    }
+
+    .inside h3 {
+        font-size: 1.2rem;
+    }
+
+    .frames img {
+        width: 125px;
+        height: 125px;
+    }
+
+    .frames p {
+        font-size: 20px;
+    }
 }
